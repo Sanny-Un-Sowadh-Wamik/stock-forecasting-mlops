@@ -29,7 +29,19 @@ from stockfc.predict import forecast, load_artifacts
 st.set_page_config(page_title="ASX Stock Forecaster", page_icon="📈", layout="wide")
 
 CFG = load_config()
-API_URL = os.getenv("API_URL", st.secrets.get("API_URL", "") if hasattr(st, "secrets") else "")
+
+
+def _get_api_url() -> str:
+    """Optional link to the live API — from env or Streamlit secrets, never crashing."""
+    if os.getenv("API_URL"):
+        return os.environ["API_URL"]
+    try:
+        return st.secrets.get("API_URL", "")  # raises if no secrets file exists
+    except Exception:
+        return ""
+
+
+API_URL = _get_api_url()
 
 
 @st.cache_resource(show_spinner=False)
