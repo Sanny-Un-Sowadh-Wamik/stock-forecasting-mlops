@@ -1,7 +1,7 @@
 # Deployment requirements for the Streamlit Community Cloud dashboard.
 # The dashboard adds ./src to sys.path, so the stockfc package itself need not be
 # installed — only its runtime third-party dependencies are listed here.
-streamlit>=1.33
+streamlit>=1.50
 plotly>=5.20
 pandas>=2.1
 numpy>=1.26

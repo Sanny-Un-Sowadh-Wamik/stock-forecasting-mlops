@@ -126,7 +126,7 @@ with tab_fc:
         margin=dict(l=10, r=10, t=30, b=10),
         legend=dict(orientation="h", yanchor="bottom", y=1.02),
     )
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width="stretch")
 
 # ── Model comparison tab ─────────────────────────────────────────────────────
 with tab_cmp:
@@ -155,7 +155,7 @@ with tab_cmp:
                     "Directional acc.": "{:.2f}",
                 }
             ).highlight_max(subset=["Directional acc."], color="#c8e6c9"),
-            use_container_width=True,
+            width="stretch",
         )
         bar = go.Figure(
             go.Bar(
@@ -166,7 +166,7 @@ with tab_cmp:
         )
         bar.add_hline(y=50, line_dash="dot", annotation_text="coin-flip (50%)")
         bar.update_layout(height=340, title="Directional accuracy (%)", margin=dict(t=40, b=10))
-        st.plotly_chart(bar, use_container_width=True)
+        st.plotly_chart(bar, width="stretch")
         st.info(
             "On daily **price RMSE** the random walk is hard to beat — that is the correct, "
             "leakage-free result. The edge shows in **directional accuracy**, where the tuned "
@@ -209,4 +209,4 @@ with tab_bt:
             margin=dict(t=40, b=10),
             legend=dict(orientation="h", yanchor="bottom", y=1.02),
         )
-        st.plotly_chart(bt, use_container_width=True)
+        st.plotly_chart(bt, width="stretch")
