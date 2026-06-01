@@ -1,0 +1,43 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Project configuration. Plain parameters live here (version-controlled);
+# secrets live in .env. Validated into typed pydantic models at load time.
+# ─────────────────────────────────────────────────────────────────────────────
+project_name: stock-forecasting-mlops
+
+data:
+  # 10 liquid ASX large-caps (Yahoo Finance uses the .AX suffix for the ASX).
+  tickers:
+    - BHP.AX   # BHP Group — materials
+    - CBA.AX   # Commonwealth Bank — financials
+    - CSL.AX   # CSL Ltd — healthcare
+    - NAB.AX   # National Australia Bank
+    - WBC.AX   # Westpac Banking
+    - ANZ.AX   # ANZ Group
+    - WES.AX   # Wesfarmers — consumer
+    - WOW.AX   # Woolworths Group
+    - TLS.AX   # Telstra — telecom
+    - FMG.AX   # Fortescue — materials
+  start_date: "2019-01-01"
+  end_date: null          # null = up to today
+  interval: "1d"
+  cache_days: 1           # re-pull a ticker only if its cache is older than this
+
+features:
+  sma_windows: [7, 30]
+  ema_windows: [12, 26]
+  rsi_period: 14
+  bb_window: 20
+  bb_std: 2.0
+  macd_fast: 12
+  macd_slow: 26
+  macd_signal: 9
+  return_lags: [1, 2, 3, 5, 10]
+  target_horizon: 1       # forecast N trading days ahead
+  target_kind: log_return # "log_return" (modelled) is reconstructed to price for display
+
+model:
+  test_size: 0.2
+  cv_splits: 5            # walk-forward (TimeSeriesSplit) folds
+  random_state: 42
+  optuna_trials: 30
+  registry_name: asx-forecaster

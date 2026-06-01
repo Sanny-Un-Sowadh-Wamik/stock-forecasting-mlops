@@ -1,0 +1,85 @@
+{
+  "registry_name": "asx-forecaster",
+  "serving_model": "xgboost",
+  "trained_at": "2026-06-01T13:33:20.070449+00:00",
+  "tickers": [
+    "BHP.AX",
+    "CBA.AX",
+    "CSL.AX",
+    "NAB.AX",
+    "WBC.AX",
+    "ANZ.AX",
+    "WES.AX",
+    "WOW.AX",
+    "TLS.AX",
+    "FMG.AX"
+  ],
+  "target_kind": "log_return",
+  "target_horizon": 1,
+  "feature_columns": [
+    "log_return",
+    "sma_7",
+    "close_sma_7_ratio",
+    "sma_30",
+    "close_sma_30_ratio",
+    "ema_12",
+    "ema_26",
+    "rsi_14",
+    "macd",
+    "macd_signal",
+    "macd_hist",
+    "bb_upper",
+    "bb_lower",
+    "bb_width",
+    "bb_pctb",
+    "volatility_21",
+    "volume_sma_ratio",
+    "ret_lag_1",
+    "ret_lag_2",
+    "ret_lag_3",
+    "ret_lag_5",
+    "ret_lag_10"
+  ],
+  "best_params": {
+    "n_estimators": 200,
+    "max_depth": 6,
+    "learning_rate": 0.010602025806678553,
+    "subsample": 0.621196743332738,
+    "colsample_bytree": 0.9060175398719795,
+    "min_child_weight": 8,
+    "reg_lambda": 0.4785513768012438
+  },
+  "cv_return_rmse": 0.016451789531723146,
+  "cutoff_date": "2024-12-10",
+  "metrics": {
+    "persistence": {
+      "price_rmse": 1.696375,
+      "price_mae": 0.734605,
+      "price_mape": 1.065724,
+      "return_rmse": 0.015696,
+      "directional_accuracy": 0.017568
+    },
+    "arima": {
+      "price_rmse": 1.743086,
+      "price_mae": 0.749182,
+      "price_mape": 1.078315,
+      "return_rmse": 0.015915,
+      "directional_accuracy": 0.488108
+    },
+    "xgboost": {
+      "price_rmse": 1.710529,
+      "price_mae": 0.739411,
+      "price_mape": 1.070775,
+      "return_rmse": 0.015784,
+      "directional_accuracy": 0.517568
+    },
+    "lstm": {
+      "price_rmse": 2.900585,
+      "price_mae": 1.13378,
+      "price_mape": 1.308082,
+      "return_rmse": 0.020078,
+      "directional_accuracy": 0.503514
+    }
+  },
+  "lstm_lookback": 20
+}
