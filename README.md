@@ -84,6 +84,8 @@ make data && make train && make api && make app
 
 ## 📊 Results
 
+![Held-out results](docs/images/results.png)
+
 Pooled across all 10 tickers (**18,460 samples**), evaluated on a **walk-forward hold-out** — train ≤ 2024-12-09, test 2024-12-10 → present (**3,700 days**). Target = next-day log-return; price is reconstructed for an apples-to-apples RMSE against ARIMA.
 
 | Model | Price RMSE ↓ | Price MAPE ↓ | Return RMSE ↓ | Directional Acc. ↑ |
