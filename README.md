@@ -7,8 +7,9 @@
 ![MLflow](https://img.shields.io/badge/tracking-MLflow-0194E2)
 ![License](https://img.shields.io/badge/license-MIT-green)
 [![Live Demo](https://img.shields.io/badge/%F0%9F%A4%97%20Live%20Demo-online-success)](https://sanny2005-asx-stock-forecaster.hf.space)
+[![API](https://img.shields.io/badge/API-%2Fdocs-blue)](https://sanny2005-asx-forecaster-api.hf.space/docs)
 
-**🔴 Live demo (no login):** **[▶ Open the interactive dashboard](https://sanny2005-asx-stock-forecaster.hf.space)** — Hugging Face Space · _FastAPI `/docs` coming next_
+**🔴 Live demos (no login):** **[▶ Interactive dashboard](https://sanny2005-asx-stock-forecaster.hf.space)** · **[⚡ Prediction API `/docs`](https://sanny2005-asx-forecaster-api.hf.space/docs)** — both on Hugging Face Spaces
 
 ---
 
