@@ -6,8 +6,9 @@
 ![Python](https://img.shields.io/badge/python-3.11-blue)
 ![MLflow](https://img.shields.io/badge/tracking-MLflow-0194E2)
 ![License](https://img.shields.io/badge/license-MIT-green)
+[![Live Demo](https://img.shields.io/badge/%F0%9F%A4%97%20Live%20Demo-online-success)](https://sanny2005-asx-stock-forecaster.hf.space)
 
-**Live demo:** 🔗 _Streamlit dashboard — link added after deploy_ · 🔗 _FastAPI `/docs` — link added after deploy_
+**🔴 Live demo (no login):** **[▶ Open the interactive dashboard](https://sanny2005-asx-stock-forecaster.hf.space)** — Hugging Face Space · _FastAPI `/docs` coming next_
 
 ---
 
