@@ -73,15 +73,15 @@ theme.hero(
     tag="MLOPS · XGBOOST · LSTM · FASTAPI",
 )
 
-with st.sidebar:
-    st.markdown("### ⚙️ Controls")
-    ticker = st.selectbox("Ticker", tickers, index=0)
-    horizon = st.slider("Forecast horizon (trading days)", 1, 30, 7)
-    lookback = st.slider("History to display (days)", 60, 500, 180, step=20)
+with st.expander("⚙️  Settings", expanded=True):
+    sc1, sc2, sc3 = st.columns(3)
+    ticker = sc1.selectbox("Ticker", tickers, index=0)
+    horizon = sc2.slider("Forecast horizon (trading days)", 1, 30, 7)
+    lookback = sc3.slider("History to display (days)", 60, 500, 180, step=20)
+    _cap = f"Model: **{meta.get('serving_model', 'xgboost')}** · trained {meta.get('trained_at', '')[:10]}"
     if API_URL:
-        st.markdown(f"🔗 [Live API docs]({API_URL}/docs)")
-    st.markdown("---")
-    st.caption(f"Model: **{meta.get('serving_model', 'xgboost')}** · trained {meta.get('trained_at', '')[:10]}")
+        _cap += f" · 🔗 [Live API docs]({API_URL}/docs)"
+    st.caption(_cap)
 
 tab_fc, tab_cmp, tab_bt = st.tabs(["📈  Forecast", "🧪  Model comparison", "💹  Backtest"])
 
