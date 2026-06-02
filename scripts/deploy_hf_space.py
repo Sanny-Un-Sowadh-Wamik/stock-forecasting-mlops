@@ -32,8 +32,9 @@ short_description: XGBoost forecaster for 10 ASX stocks - MLOps demo
 
 # 📈 ASX Stock-Price Forecaster — live demo
 
-Interactive dashboard for **[stock-forecasting-mlops](https://github.com/Sanny-Un-Sowadh-Wamik/stock-forecasting-mlops)** —
-a walk-forward-validated XGBoost forecaster across 10 ASX large-caps, with an honest model
+Interactive dashboard for
+**[stock-forecasting-mlops](https://github.com/Sanny-Un-Sowadh-Wamik/stock-forecasting-mlops)** — a
+walk-forward-validated XGBoost forecaster across 10 ASX large-caps, with an honest model
 comparison (persistence / ARIMA / XGBoost / LSTM) and an out-of-sample backtest.
 
 _Educational only — not financial advice._

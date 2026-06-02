@@ -6,7 +6,6 @@ Run:  python scripts/make_figures.py   (writes docs/images/results.png)
 from __future__ import annotations
 
 import json
-from pathlib import Path
 
 import matplotlib
 
