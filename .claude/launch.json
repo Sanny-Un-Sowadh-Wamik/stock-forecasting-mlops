@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "deep-analysis",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "deep-analysis", "run", "dev"],
+      "port": 3000
+    }
+  ]
+}
